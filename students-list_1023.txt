@@ -1,17 +1,7 @@
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-
+j.kur@alustudent.com, 20, 00012
+a.garang@alustudent.com, 23, 00013
+i.nangah@alustudent.com, 25, 00014
+a.kasa@alustudent.com, 22, 00015
+p.hirwa@alustudent.com, 20, 00016
+p.savadogo@alustudent.com, 21, 00017
+m.audrey1@alustudent.com, 22, 00018
