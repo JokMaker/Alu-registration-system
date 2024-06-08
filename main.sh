@@ -1,78 +1,122 @@
 #!/bin/bash
 
-FILENAME="students-list_1023.txt"
+STUDENT_FILE="students-list_0524.txt"
 
-# Function to create a student record
 create_student() {
-  read -p "j.kur@alustudent.com: " email
-  read -p "21: " age
-  read -p "251200431: " student_id
-  echo "$student_id,$email,$age" >> $FILENAME
-  echo "Student record created."
+    echo "j.kur@alustudent.com:"
+    read email
+    echo "21:"
+    read age
+    echo "00012:"
+    read id
+    echo "$email, $age, $id" >> $STUDENT_FILE
+    echo "Student record created."
 
-  read -p "a.garang@alustudent.com: " email
-  read -p "23: " age
-  read -p "251200432: " student_id
-  echo "$student_id,$email,$age" >> $FILENAME
-  echo "Student record created."
+    echo "a.garang@alustudent.com:"
+    read email
+    echo "23:"
+    read age
+    echo "00013:"
+    read id
+    echo "$email, $age, $id" >> $STUDENT_FILE
+    echo "Student record created."
 
-  read -p "i.nangah@alustudent.com: " email
-  read -p "20: " age
-  read -p "251200433: " student_id
-  echo "$student_id,$email,$age" >> $FILENAME
-  echo "Student record created."
+echo "a.kasa@alustudent.com:"
+    read email
+    echo "25:"
+    read age
+    echo "00014:"
+    read id
+    echo "$email, $age, $id" >> $STUDENT_FILE
+    echo "Student record created." 
+
+    echo "p.hirwa@alustudent.com:"
+    read email
+    echo "22:"
+    read age
+    echo "00015:"
+    read id
+    echo "$email, $age, $id" >> $STUDENT_FILE
+    echo "Student record created."
+
+    echo "i.nangah@alustudent.com:"
+    read email
+    echo "23:"
+    read age
+    echo "00016:"
+    read id
+    echo "$email, $age, $id" >> $STUDENT_FILE
+    echo "Student record created." 
+
+    echo "p.savadogo@alustudent.com:"
+    read email
+    echo "20:"
+    read age
+    echo "00017:"
+    read id
+    echo "$email, $age, $id" >> $STUDENT_FILE
+    echo "Student record created."
+
+    echo "m.audrey1@alustudent.com:"
+    read email
+    echo "19:"
+    read age
+    echo "00012:"
+    read id
+    echo "$email, $age, $id" >> $STUDENT_FILE
+    echo "Student record created."
 }
 
-# Function to view all student records
 view_students() {
-  if [ -f $FILENAME ]; then
-    cat $FILENAME
-  else
-    echo "No student records found."
-  fi
+    if [ -f $STUDENT_FILE ]; then
+        cat $STUDENT_FILE
+    else
+        echo "No student records found."
+    fi
 }
 
-# Function to delete a student record by student ID
 delete_student() {
-  read -p "251200431: " student_id
-  if [ -f $FILENAME ]; then
-    grep -v "^$student_id," $FILENAME > temp.txt && mv temp.txt $FILENAME
-    echo "Student record deleted."
-  else
-    echo "No student records found."
-  fi
+    echo "00012:"
+    read id
+    if [ -f $STUDENT_FILE ]; then
+        grep -v ", $id" $STUDENT_FILE > temp.txt && mv temp.txt $STUDENT_FILE
+        echo "Student record deleted."
+    else
+        echo "No student records found."
+    fi
 }
 
-# Function to update a student record by student ID
 update_student() {
-  read -p "251200433: " student_id
-  if grep -q "^$student_id," $FILENAME; then
-    grep -v "^$student_id," $FILENAME > temp.txt && mv temp.txt $FILENAME
-    read -p "i.nangah@alustudent.com: " email
-    read -p "21: " age
-    echo "$student_id,$email,$age" >> $FILENAME
-    echo "Student record updated."
-  else
-    echo "Student ID not found."
-  fi
+    echo "00016:"
+    read id
+    if [ -f $STUDENT_FILE ]; then
+        grep -v ", $id" $STUDENT_FILE > temp.txt
+        mv temp.txt $STUDENT_FILE
+        echo "n.innocent1@alustudent.com:"
+        read new_email
+        echo "20:"
+        read new_age
+        echo "$new_email, $new_age, $id" >> $STUDENT_FILE
+        echo "Student record updated."
+    else
+        echo "No student records found."
+    fi
 }
 
-# Main menu
 while true; do
-  echo "1. Create student record"
-  echo "2. View all students"
-  echo "3. Delete student record"
-  echo "4. Update student record"
-  echo "5. Exit"
-  read -p "Choose an option: " choice
-
-  case $choice in
-    1) create_student ;;
-    2) view_students ;;
-    3) delete_student ;;
-    4) update_student ;;
-    5) exit 0 ;;
-    *) echo "Invalid option. Please try again." ;;
-  esac
+    echo "1. Create Student Record"
+    echo "2. View All Students"
+    echo "3. Delete Student Record"
+    echo "4. Update Student Record"
+    echo "5. Exit"
+    read choice
+    case $choice in
+        1) create_student ;;
+        2) view_students ;;
+        3) delete_student ;;
+        4) update_student ;;
+        5) exit 0 ;;
+        *) echo "Invalid option." ;;
+    esac
 done
 
