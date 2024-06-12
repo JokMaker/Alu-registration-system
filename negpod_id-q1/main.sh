@@ -1,67 +1,13 @@
 #!/bin/bash
 
-STUDENT_FILE="students-list_0524.txt"
+STUDENT_FILE="students-list_1023.txt"
 
 create_student() {
-    echo "j.kur@alustudent.com:"
+    echo "Enter student email:"
     read email
-    echo "21:"
+    echo "Enter student age:"
     read age
-    echo "00012:"
-    read id
-    echo "$email, $age, $id" >> $STUDENT_FILE
-    echo "Student record created."
-
-    echo "a.garang@alustudent.com:"
-    read email
-    echo "23:"
-    read age
-    echo "00013:"
-    read id
-    echo "$email, $age, $id" >> $STUDENT_FILE
-    echo "Student record created."
-
-echo "a.kasa@alustudent.com:"
-    read email
-    echo "25:"
-    read age
-    echo "00014:"
-    read id
-    echo "$email, $age, $id" >> $STUDENT_FILE
-    echo "Student record created." 
-
-    echo "p.hirwa@alustudent.com:"
-    read email
-    echo "22:"
-    read age
-    echo "00015:"
-    read id
-    echo "$email, $age, $id" >> $STUDENT_FILE
-    echo "Student record created."
-
-    echo "i.nangah@alustudent.com:"
-    read email
-    echo "23:"
-    read age
-    echo "00016:"
-    read id
-    echo "$email, $age, $id" >> $STUDENT_FILE
-    echo "Student record created." 
-
-    echo "p.savadogo@alustudent.com:"
-    read email
-    echo "20:"
-    read age
-    echo "00017:"
-    read id
-    echo "$email, $age, $id" >> $STUDENT_FILE
-    echo "Student record created."
-
-    echo "m.audrey1@alustudent.com:"
-    read email
-    echo "19:"
-    read age
-    echo "00012:"
+    echo "Enter student ID:"
     read id
     echo "$email, $age, $id" >> $STUDENT_FILE
     echo "Student record created."
@@ -76,7 +22,7 @@ view_students() {
 }
 
 delete_student() {
-    echo "00012:"
+    echo "Enter student ID to delete:"
     read id
     if [ -f $STUDENT_FILE ]; then
         grep -v ", $id" $STUDENT_FILE > temp.txt && mv temp.txt $STUDENT_FILE
@@ -87,14 +33,14 @@ delete_student() {
 }
 
 update_student() {
-    echo "00016:"
+    echo "Enter student ID to update:"
     read id
     if [ -f $STUDENT_FILE ]; then
         grep -v ", $id" $STUDENT_FILE > temp.txt
         mv temp.txt $STUDENT_FILE
-        echo "n.innocent1@alustudent.com:"
+        echo "Enter new email:"
         read new_email
-        echo "20:"
+        echo "Enter new age:"
         read new_age
         echo "$new_email, $new_age, $id" >> $STUDENT_FILE
         echo "Student record updated."
