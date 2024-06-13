@@ -1,6 +1,19 @@
  
 a.garang@alustudent.com, 23, 00125
 m.audrey1@alustudent.com, 22, 00126
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+i.nangah@alustudent.com, 20, 00127
+p.hirwa@alustudent.com, 23, 00129
+a.kasa@alustudent.com, 23, 00124
+wenmaker12@gmail.com, 20, 00123
+spikekasa@gmail.com, 21, 00234
+jael.savadogo@gmail.com, 22, 00128
+=======
+=======
+>>>>>>> d2aed6dda2649603ac92258a8ead5daa0cd6331d
+>>>>>>> 7c6a8f9fcda96c22cf8fc28b1acda830d43e7c60
 p.savadodgo@alustudent.com, 21, 00128
 a.kasa@alustudent.com, 23, 00124
 wenmaker12@gmail.com, 20, 00123
@@ -9,3 +22,4 @@ hirwapatrick500@gmail.com, 20, 00129
 hirwa@gmail.com, 20, 00131
 munezeroaudrey1@gmail.com, 22, 00126
 Nangah@gmail.com, 19, 00127
+>>>>>>> 4b3ff367df9a5781f1b6d646cdf9e8ac6227e787
