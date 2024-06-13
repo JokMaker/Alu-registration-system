@@ -1,8 +1,8 @@
 #!/bin/bash
 
 STUDENT_FILE="students-list_0524.txt"
-EMAILS_FILE="student-emails.txt"
-BACKUP_DIR="backup_dir"
+EMAIL_FILE="student-emails.txt"
+BACKUP_FILE="students-list_0524_backup.txt"
 
 create_student() {
     echo "Enter student email:"
@@ -18,6 +18,14 @@ create_student() {
 view_students() {
     if [ -f $STUDENT_FILE ]; then
         cat $STUDENT_FILE
+    else
+        echo "No student records found."
+    fi
+}
+
+view_emails() {
+    if [ -f $STUDENT_FILE ]; then
+        awk -F', ' '{print $1}' $STUDENT_FILE | sort
     else
         echo "No student records found."
     fi
@@ -51,19 +59,18 @@ update_student() {
     fi
 }
 
-view_emails_asc() {
+backup_data() {
+    cp $STUDENT_FILE $BACKUP_FILE
+    echo "Backup created at $BACKUP_FILE."
+}
+
+save_sorted_emails() {
     if [ -f $STUDENT_FILE ]; then
-        cut -d, -f1 $STUDENT_FILE | sort > $EMAILS_FILE
-        cat $EMAILS_FILE
+        awk -F', ' '{print $1}' $STUDENT_FILE | sort > $EMAIL_FILE
+        echo "Student emails saved in ascending order to $EMAIL_FILE."
     else
         echo "No student records found."
     fi
-}
-
-backup_data() {
-    mkdir -p $BACKUP_DIR
-    cp $STUDENT_FILE $BACKUP_DIR
-    echo "Data backed up to $BACKUP_DIR/$STUDENT_FILE"
 }
 
 while true; do
@@ -73,16 +80,18 @@ while true; do
     echo "4. Update Student Record"
     echo "5. View All Emails in ASC Order"
     echo "6. Backup Data"
-    echo "7. Exit"
+    echo "7. Save Student Emails Sorted in ASC"
+    echo "8. Exit"
     read choice
     case $choice in
         1) create_student ;;
         2) view_students ;;
         3) delete_student ;;
         4) update_student ;;
-        5) view_emails_asc ;;
+        5) view_emails ;;
         6) backup_data ;;
-        7)
+        7) save_sorted_emails ;;
+        8)
             echo "Thank you for choosing ALU Education."
             exit 0
             ;;
