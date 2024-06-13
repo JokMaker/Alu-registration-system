@@ -1,17 +1,11 @@
  
 a.garang@alustudent.com, 23, 00125
-<<<<<<< HEAD
 m.audrey1@alustudent.com, 22, 00126
-=======
->>>>>>> d2aed6dda2649603ac92258a8ead5daa0cd6331d
 p.savadodgo@alustudent.com, 21, 00128
 a.kasa@alustudent.com, 23, 00124
 wenmaker12@gmail.com, 20, 00123
-<<<<<<< HEAD
-=======
 j.kur@alustudent.com, 18, 78945
 hirwapatrick500@gmail.com, 20, 00129
 hirwa@gmail.com, 20, 00131
 munezeroaudrey1@gmail.com, 22, 00126
->>>>>>> d2aed6dda2649603ac92258a8ead5daa0cd6331d
 Nangah@gmail.com, 19, 00127
