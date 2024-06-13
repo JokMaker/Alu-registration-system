@@ -2,7 +2,7 @@
 
 STUDENT_FILE="students-list_0524.txt"
 EMAIL_FILE="student-emails.txt"
-BACKUP_FILE="students-list_0524_backup.txt"
+BACKUP_FILE="students-list_0524.txt"
 
 create_student() {
     echo "Enter student email:"
